@@ -2,6 +2,8 @@ package Spring.Spring_Basic.repository;
 import Spring.Spring_Basic.repository.MemberRepository;
 import Spring.Spring_Basic.domain.Member;
 import org.springframework.jdbc.datasource.DataSourceUtils;
+
+import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
@@ -13,6 +15,8 @@ public class JdbcMemberRepository implements MemberRepository {
     public JdbcMemberRepository(DataSource dataSource) {
         this.dataSource = dataSource;
     }
+
+
     @Override
     public Member save(Member member) {
         String sql = "insert into member(name) values(?)";

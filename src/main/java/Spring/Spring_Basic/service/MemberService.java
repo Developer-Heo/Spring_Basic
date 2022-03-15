@@ -4,6 +4,7 @@ import Spring.Spring_Basic.domain.Member;
 import Spring.Spring_Basic.repository.MemberRepository;
 import Spring.Spring_Basic.repository.MemoryMemberRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,6 +12,7 @@ import java.util.OptionalInt;
 
 // 서비스에서 비지니스 로직 만듬
 
+@Transactional // join에 해줘도 무관
 public class MemberService {
 
     private final MemberRepository memberRepository; //= new MemoryMemberRepository();
